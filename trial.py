@@ -1,96 +1,51 @@
-def west():
-    return 'W'
+# functions to return directions
+west = lambda : 'W'
+east = lambda : 'E'
+north = lambda : 'N'
+south = lambda : 'S'
 
+# functions to return if they are of a certain value
+is_left = lambda direction: 1 if direction == 'L' else 0
+is_move = lambda direction: 1 if direction == 'M' else 0
+is_north = lambda state: 1 if state == 'N' else 0
+is_south = lambda state: 1 if state == 'S' else 0
+is_east = lambda state: 1 if state == 'E' else 0
+is_west = lambda state: 1 if state == 'W' else 0
 
-def east():
-    return 'E'
+# functions to flip (swap between two possible logical values, i.e. return east if west) the input
+swap_north = lambda state: east() if state == 'W' else west()
+swap_east = lambda state: south() if state == 'N' else north()
 
-
-def north():
-    return 'N'
-
-
-def south():
-    return 'S'
-
-
-def is_left(direction):
-    if direction == 'L':
-        return 1
-    return 0
-
-
-def is_north(state):
-    if state == 'N':
-        return 1
-    return 0
-
-
-def is_south(state):
-    if state == 'S':
-        return 1
-    return 0
-
-
-def is_east(state):
-    if state == 'E':
-        return 1
-    return 0
-
-
-def is_west(state):
-    if state == 'W':
-        return 1
-    return 0
-
-
-def is_move(direction):
-    if direction == 'M':
-        return 1
-    return 0
-
-def swap_north(state):
-    if state == 'W':
-        return east()
-    return west()
-
-
-def swap_east(state):
-    if state == 'N':
-        return south()
-    return north()
-
-
-def change_north(direction):
-    if is_left(direction):
-        return west()
-    return east()
-
-
-def change_south(direction):
-    return swap_north(change_north(direction))
-
-
+# functions to change directions
+change_north = lambda direction: west() if is_left(direction) else east()
+change_south = lambda direction: swap_north(change_north(direction)) # flipping north's return gives us south
 change_east = lambda direction: north() if is_left(direction) else south()
+change_west = lambda direction: swap_east(change_east(direction)) # flipping east's return gives us west
 
-
-def change_west(direction):
-    return swap_east(change_east(direction))
-
-
+# moving grids based on the side facing
 move = lambda current, direction, func1, func2:  func1(current) and func2(direction)
+
+# functions to move from a specific position
 from_north = lambda current, direction:  move(current, direction, is_north, change_north)
 from_south = lambda current, direction:  move(current, direction, is_south, change_south)
 from_east = lambda current, direction:  move(current, direction, is_east, change_east)
 from_west = lambda current, direction:  move(current, direction, is_west, change_west)
 
+# changing grid position while ensuring not going out of bound
 increase = lambda position, index, limit: position[index] + 1 if position[index] < limit else position[index]
 decrease = lambda position, index: position[index] - 1 if position[index] > 0 else position[index]
 
+# to decide which side the robot is facing
 which_side = lambda state, side1, side2: side1(state) or side2(state)
+
+# pass decision as to keep position or not, if yes, keep the current position on the axis
 keep = lambda position, side1, side2, index: which_side(position[2], side1, side2) and str(position[index])
+
+# change the position forward or backwards
 change = lambda position, side, index, limit: str(increase(position, index, limit)) if side(position[2]) else str(decrease(position, index))
 
+move_x = lambda position, x_limit:
+initiate_move = lambda position, x_limit, y_limit:
 
 def find_position(position, movement, x_limit, y_limit):
     new_position = []
@@ -119,6 +74,4 @@ size = [5, 5]
 position = [3, 3, 'E']
 movement = ['M', 'M', 'R', 'M', 'M', 'R', 'M', 'R', 'R', 'M']
 
-
-# print(change_east('R'))
 print(find_position(position, movement, size[0], size[1]))
