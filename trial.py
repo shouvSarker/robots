@@ -1,8 +1,8 @@
 # functions to return directions
-west = lambda : 'W'
-east = lambda : 'E'
-north = lambda : 'N'
-south = lambda : 'S'
+west = lambda: 'W'
+east = lambda: 'E'
+north = lambda: 'N'
+south = lambda: 'S'
 
 # functions to return if they are of a certain value
 is_left = lambda direction: 1 if direction == 'L' else 0
@@ -44,29 +44,33 @@ keep = lambda position, side1, side2, index: which_side(position[2], side1, side
 # change the position forward or backwards
 change = lambda position, side, index, limit: str(increase(position, index, limit)) if side(position[2]) else str(decrease(position, index))
 
-move_x = lambda position, x_limit:
-initiate_move = lambda position, x_limit, y_limit:
+# functions to keep or move x or y axis
+move_x = lambda position, x_limit, new_position: new_position.append(int(keep(position, is_north, is_south, 0) or change(position, is_east, 0, x_limit)))
+move_y = lambda position, y_limit, new_position: new_position.append(int(keep(position, is_east, is_west, 1) or change(position, is_north, 1, y_limit)))
+
+# keeps the current direction
+keep_state = lambda current, new_position: new_position.append(current)
+
+# initiates the move with position, x and y limit and a new position list
+initiate_move = lambda p, x, y, n: move_x(p, x, n) or move_y(p, y, n) or keep_state(p[2], n)
+
 
 def find_position(position, movement, x_limit, y_limit):
     new_position = []
-    # func_list = [is_east, is_west, is_north, is_south]
-    # print(position)
-    if is_move(movement[0]):
-        print("Moving")
-        new_position.append(int(keep(position, is_north, is_south, 0) or change(position, is_east, 0, x_limit)))
-        new_position.append(int(keep(position, is_east, is_west, 1) or change(position, is_north, 1, y_limit)))
 
-        new_position.append(position[2])
+    # if the next action is movement, move. Otherwise, change direction
+    if is_move(movement[0]):
+        initiate_move(position, x_limit, y_limit, new_position)
     else:
         args = dict(current=position[2], direction=movement[0])
-        print("going left")
-        new_position.extend(position[:2])
+        new_position.extend(position[:2]) # keep the x and y value as not moving
+        # change direction based on current state and movement value
         new_position.append(from_north(**args) or from_south(**args) or from_east(**args) or from_west(**args))
 
     if len(movement) == 1:
-        print("Finished")
-        return new_position
+        return new_position  # return from the recursive function if the last movement is processed
 
+    # recursively call the function until all movements are processed
     return find_position(new_position, movement[1:], x_limit, y_limit)
 
 
