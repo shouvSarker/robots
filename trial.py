@@ -52,15 +52,26 @@ move_y = lambda position, y_limit, new_position: new_position.append(int(keep(po
 keep_state = lambda current, new_position: new_position.append(current)
 
 # initiates the move with position, x and y limit and a new position list
-initiate_move = lambda p, x, y, n: move_x(p, x, n) or move_y(p, y, n) or keep_state(p[2], n)
+initiate_move = lambda p, s, n: move_x(p, s[0], n) or move_y(p, s[1], n) or keep_state(p[2], n)
+
+# converts input value into a list of ints and strings
+convert = lambda input_value: [int(i) if str.isdigit(i) else i for i in input_value.split(' ')]
+# reads in position and movement from command line
+position = lambda: input("Enter the starting position of the robot separated by space: ")
+movement = lambda: input("Enter the movements all together in a LMMLRM format: ")
+# returns the final position of the robot
+final_position = lambda size: " ".join(str(i) for i in find_position(convert(position()), list(movement()), convert(size)))
+# prints out the final position and recurses until all the specified number of inputs have been taken
+handle_input = lambda total, size: print(final_position(size)) or ("Done" if total == 1 else handle_input(total - 1, size))
 
 
-def find_position(position, movement, x_limit, y_limit):
+# returns the final position based on initial position, movement and upper right coordinates
+def find_position(position, movement, size):
     new_position = []
 
     # if the next action is movement, move. Otherwise, change direction
     if is_move(movement[0]):
-        initiate_move(position, x_limit, y_limit, new_position)
+        initiate_move(position, size, new_position)
     else:
         args = dict(current=position[2], direction=movement[0])
         new_position.extend(position[:2]) # keep the x and y value as not moving
@@ -71,11 +82,9 @@ def find_position(position, movement, x_limit, y_limit):
         return new_position  # return from the recursive function if the last movement is processed
 
     # recursively call the function until all movements are processed
-    return find_position(new_position, movement[1:], x_limit, y_limit)
+    return find_position(new_position, movement[1:], size)
 
 
-size = [5, 5]
-position = [3, 3, 'E']
-movement = ['M', 'M', 'R', 'M', 'M', 'R', 'M', 'R', 'R', 'M']
-
-print(find_position(position, movement, size[0], size[1]))
+total = input("Please enter the number of inputs of for a specific upper right coordinate: ")
+size = input("Input the upper right coordinates of the exploration area seperated by space: ")
+print(handle_input(int(total), size))
