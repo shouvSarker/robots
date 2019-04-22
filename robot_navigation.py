@@ -1,3 +1,4 @@
+# developed in python3, authored by Shouv
 # functions to return directions
 west = lambda: 'W'
 east = lambda: 'E'
@@ -44,25 +45,19 @@ keep = lambda position, side1, side2, index: which_side(position[2], side1, side
 # change the position forward or backwards
 change = lambda position, side, index, limit: str(increase(position, index, limit)) if side(position[2]) else str(decrease(position, index))
 
-# functions to keep or move x or y axis
-move_x = lambda position, x_limit, new_position: new_position.append(int(keep(position, is_north, is_south, 0) or change(position, is_east, 0, x_limit)))
-move_y = lambda position, y_limit, new_position: new_position.append(int(keep(position, is_east, is_west, 1) or change(position, is_north, 1, y_limit)))
-
-# keeps the current direction
-keep_state = lambda current, new_position: new_position.append(current)
-
-# initiates the move with position, x and y limit and a new position list
-initiate_move = lambda p, s, n: move_x(p, s[0], n) or move_y(p, s[1], n) or keep_state(p[2], n)
-
 # converts input value into a list of ints and strings
 convert = lambda input_value: [int(i) if str.isdigit(i) else i for i in input_value.split(' ')]
-# reads in position and movement from command line
-position = lambda: input("Enter the starting position of the robot separated by space: ")
-movement = lambda: input("Enter the movements all together in a LMMLRM format: ")
+# reads in from command line
+total = lambda: input("Please enter the number of inputs of for a specific upper right coordinate: \n")
+size = lambda: input("Input the upper right coordinates of the exploration area seperated by space: \n")
+position = lambda: input("Enter the starting position of the robot separated by space: \n")
+movement = lambda: input("Enter the movements all together in a LMMLRM format: \n")
 # returns the final position of the robot
 final_position = lambda size: " ".join(str(i) for i in find_position(convert(position()), list(movement()), convert(size)))
 # prints out the final position and recurses until all the specified number of inputs have been taken
 handle_input = lambda total, size: print(final_position(size)) or ("Done" if total == 1 else handle_input(total - 1, size))
+# main funciton to start the program
+main = lambda: print(handle_input(int(total()), size()))
 
 
 # returns the final position based on initial position, movement and upper right coordinates
@@ -71,7 +66,9 @@ def find_position(position, movement, size):
 
     # if the next action is movement, move. Otherwise, change direction
     if is_move(movement[0]):
-        initiate_move(position, size, new_position)
+        new_position.append(int(keep(position, is_north, is_south, 0) or change(position, is_east, 0, size[0])))
+        new_position.append(int(keep(position, is_east, is_west, 1) or change(position, is_north, 1, size[1])))
+        new_position.append(position[2])
     else:
         args = dict(current=position[2], direction=movement[0])
         new_position.extend(position[:2]) # keep the x and y value as not moving
@@ -85,6 +82,5 @@ def find_position(position, movement, size):
     return find_position(new_position, movement[1:], size)
 
 
-total = input("Please enter the number of inputs of for a specific upper right coordinate: ")
-size = input("Input the upper right coordinates of the exploration area seperated by space: ")
-print(handle_input(int(total), size))
+if __name__ == '__main__':
+    main()

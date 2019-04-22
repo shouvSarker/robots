@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ef3607d-0875-4418-aec6-70ed500fb645" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/trial.py" beforeDir="false" afterPath="$PROJECT_DIR$/trial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trial.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,21 +13,24 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Functions.py">
+        <entry file="file://$PROJECT_DIR$/robot_navigation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="12" selection-end-column="64" />
+            <state relative-caret-position="105">
+              <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/trial.py">
+        <entry file="file://$PROJECT_DIR$/tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="89" column="37" lean-forward="true" selection-start-line="89" selection-start-column="37" selection-end-line="89" selection-end-column="37" />
+            <state relative-caret-position="558">
+              <caret line="99" column="19" lean-forward="true" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -39,14 +44,25 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>keep</find>
+      <find>side</find>
+      <find>move_x</find>
+      <find>init</find>
+      <find>trial</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Functions.py" />
         <option value="$PROJECT_DIR$/trial.py" />
+        <option value="$PROJECT_DIR$/Functions.py" />
+        <option value="$PROJECT_DIR$/tests.py" />
+        <option value="$PROJECT_DIR$/robot_navigation.py" />
       </list>
     </option>
   </component>
@@ -62,6 +78,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -73,7 +90,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="RunDashboard">
@@ -88,7 +104,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.trial">
+  <component name="RunManager" selected="Python tests.Unittests in tests.py">
     <configuration name="trial" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="robots" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -110,7 +126,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for Functions.TestStringMethods.test_upper" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for Functions.TestStringMethods.test_convert" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="robots" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -120,11 +136,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;Functions.TestStringMethods.test_upper&quot;" />
+      <option name="_new_target" value="&quot;Functions.TestStringMethods.test_convert&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests in Functions.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for Functions.TestStringMethods.test_final_position" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="robots" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -134,15 +150,45 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/Functions.py&quot;" />
+      <option name="_new_target" value="&quot;Functions.TestStringMethods.test_final_position&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for Functions.TestStringMethods.test_main" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="robots" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Functions.TestStringMethods.test_main&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in tests.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="robots" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests in tests.py" />
+        <item itemvalue="Python tests.Unittests for Functions.TestStringMethods.test_main" />
         <item itemvalue="Python.trial" />
-        <item itemvalue="Python tests.Unittests for Functions.TestStringMethods.test_upper" />
-        <item itemvalue="Python tests.Unittests in Functions.py" />
+        <item itemvalue="Python tests.Unittests for Functions.TestStringMethods.test_final_position" />
+        <item itemvalue="Python tests.Unittests for Functions.TestStringMethods.test_convert" />
       </list>
     </recent_temporary>
   </component>
@@ -160,50 +206,82 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_Functions_py - 2019.04.20 at 07h 27m 30s.xml">
-      <configuration name="Unittests in Functions.py" configurationId="tests" />
+    <history-entry file="Unittests_for_Functions_TestStringMethods_test_main - 2019.04.22 at 22h 32m 19s.xml">
+      <configuration name="Unittests for Functions.TestStringMethods.test_main" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_Functions_TestStringMethods_test_upper - 2019.04.20 at 08h 27m 51s.xml">
-      <configuration name="Unittests for Functions.TestStringMethods.test_upper" configurationId="tests" />
+    <history-entry file="Unittests_for_Functions_TestStringMethods_test_main - 2019.04.22 at 22h 33m 55s.xml">
+      <configuration name="Unittests for Functions.TestStringMethods.test_main" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_Functions_TestStringMethods_test_main - 2019.04.22 at 22h 34m 11s.xml">
+      <configuration name="Unittests for Functions.TestStringMethods.test_main" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_Functions_TestStringMethods_test_main - 2019.04.22 at 22h 35m 33s.xml">
+      <configuration name="Unittests for Functions.TestStringMethods.test_main" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_Functions_TestStringMethods_test_main - 2019.04.22 at 22h 36m 40s.xml">
+      <configuration name="Unittests for Functions.TestStringMethods.test_main" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_Functions_TestStringMethods_test_main - 2019.04.22 at 22h 37m 21s.xml">
+      <configuration name="Unittests for Functions.TestStringMethods.test_main" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_Functions_TestStringMethods_test_main - 2019.04.22 at 22h 40m 22s.xml">
+      <configuration name="Unittests for Functions.TestStringMethods.test_main" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_tests_py - 2019.04.22 at 22h 46m 22s.xml">
+      <configuration name="Unittests in tests.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_tests_py - 2019.04.22 at 22h 47m 15s.xml">
+      <configuration name="Unittests in tests.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_tests_py - 2019.04.22 at 23h 00m 03s.xml">
+      <configuration name="Unittests in tests.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="24" width="1343" height="815" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24945055" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2528824" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" weight="0.32918397" />
-      <window_info anchor="bottom" id="Python Console" weight="0.30290458" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37759337" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2780083" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39972338" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="R Packages" />
-      <window_info anchor="right" id="R Graphics" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32918397" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.30290458" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="R Graphics" order="3" />
+      <window_info anchor="right" id="R Packages" order="4" />
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Functions.py">
+    <entry file="file://$PROJECT_DIR$/trial.py" />
+    <entry file="file://$PROJECT_DIR$/Functions.py" />
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/robot_navigation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="12" selection-end-column="64" />
+        <state relative-caret-position="105">
+          <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trial.py">
+    <entry file="file://$PROJECT_DIR$/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="89" column="37" lean-forward="true" selection-start-line="89" selection-start-column="37" selection-end-line="89" selection-end-column="37" />
+        <state relative-caret-position="558">
+          <caret line="99" column="19" lean-forward="true" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
